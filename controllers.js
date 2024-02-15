@@ -230,16 +230,12 @@ app.get('/registroUsers',(req,res)=>{
   baseDatos.registroUsers(req,res);
 });
 //------------------------------------------------------
-app.post('/registroUsuariosPost',recaptcha.middleware.verify,(req,res)=>{
+app.post('/registroUsuariosPost',(req,res)=>{
 
 
-   if(!req.recaptcha.error){
-    // El reCAPTCHA se ha verificado correctamente
+
      baseDatos.registroUsuariosPost(req,res); 
-  } else{
-    // El reCAPTCHA no se ha verificado correctamente
-    res.send('Debes validar el Recaptcha');
-  } 
+
 })
 //------------------------------------------------------
 app.get('/mensageDeRegistro',(req,res)=>{
